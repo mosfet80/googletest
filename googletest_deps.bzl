@@ -20,3 +20,13 @@ def googletest_deps():
             strip_prefix = "abseil-cpp-20250127",
             urls = ["https://github.com/abseil/abseil-cpp/archive/refs/tags/20250127.1.zip"],
         )
+
+ git_repository(
+  name = "rules_python",
+  tag = "1.3.0",
+  remote = "https://github.com/bazelbuild/rules_python.git",
+)
+
+# if missing it will trig the error message of the OP
+load("@rules_python//python:repositories.bzl", "py_repositories")
+py_repositories()
