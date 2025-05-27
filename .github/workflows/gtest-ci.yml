@@ -5,39 +5,39 @@ on:
   pull_request:
 
 env:
-  BAZEL_CXXOPTS: -std=c++14
+  BAZEL_CXXOPTS: -std=c++17
 
 jobs:
   Linux:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Tests
-      run: bazel test --cxxopt=-std=c++14 --features=external_include_paths --test_output=errors ...
+      run: bazel test --cxxopt=-std=c++17 --features=external_include_paths --test_output=errors ...
 
   macOS:
     runs-on: macos-latest
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Tests
-      run:  bazel test --cxxopt=-std=c++14 --features=external_include_paths --test_output=errors ...
+      run:  bazel test --cxxopt=-std=c++17 --features=external_include_paths --test_output=errors ...
 
 
   Windows:
     runs-on: windows-latest
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Tests
-      run: bazel test --cxxopt=/std:c++14 --features=external_include_paths --test_output=errors ...
+      run: bazel test --cxxopt=/std:c++17 --features=external_include_paths --test_output=errors ...
