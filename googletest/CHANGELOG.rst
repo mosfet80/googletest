@@ -7,6 +7,9 @@ Changelog for package gtest_vendor
 * Deprecate gtest_vendor and gmock_vendor (`#41 <https://github.com/ament/googletest/issues/41>`_)
 * Contributors: Shane Loretz
 
+1.17.0 (2026-05-05)
+-------------------
+
 1.16.0 (2025-04-24)
 -------------------
 
